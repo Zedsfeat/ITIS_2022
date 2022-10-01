@@ -158,6 +158,8 @@ class ViewController: UIViewController {
             self.titleView.layer.borderColor = UIColor.systemRed.cgColor
             self.titleView.backgroundColor = .systemRed
             self.advertisementLabel.textColor = .systemRed
+            self.leftButton.frame.size.width = self.bottomView.bounds.width - 60
+            self.rightButton.alpha = 0
             
         } completion: { _ in
             UIView.animate(withDuration: 0.3) {
@@ -212,13 +214,17 @@ class ViewController: UIViewController {
             
             self.titleView.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.origin.y - self.advertisementView.bounds.height - self.topView.bounds.height)
             self.topView.backgroundColor = .systemPurple
+            self.advertisementView.backgroundColor = .systemYellow
+            self.titleView.backgroundColor = .systemPurple
+            self.rightButton.frame.origin.x = self.bottomView.bounds.origin.x + 30
+            self.rightButton.frame.size.width = self.bottomView.bounds.width - 60
+            self.leftButton.alpha = 0
         } completion: { _ in
             UIView.animate(withDuration: 0.3) {
                 self.titleView.transform = CGAffineTransform(translationX: 0, y: self.advertisementMessage.bounds.origin.y + 25)
                 self.advertisementMessage.alpha = 0
                 self.advertisementLabel.alpha = 0
-                self.titleView.backgroundColor = .systemPurple
-                self.advertisementView.backgroundColor = .systemYellow
+
             } completion: { _ in
                 UIView.animate(withDuration: 0.1) {
                    
@@ -233,9 +239,6 @@ class ViewController: UIViewController {
                         self.topView.backgroundColor = .systemYellow
                         self.advertisementView.frame.size.height = 600
                         self.advertisementView.center.y = self.view.center.y - 20
-                        self.rightButton.frame.origin.x = self.bottomView.bounds.origin.x + 30
-                        self.rightButton.frame.size.width = self.bottomView.bounds.width - 60
-                        self.leftButton.alpha = 0
                         self.advertisementMessage.text = "Description"
                         self.advertisementView.backgroundColor = .systemPurple
                         self.advertisementView.layer.borderColor = UIColor.systemPurple.cgColor
@@ -260,13 +263,13 @@ class ViewController: UIViewController {
             self.advertisementView.backgroundColor = .systemPurple
             self.advertisementMessage.alpha = 0
             self.advertisementLabel.alpha = 0
+            self.rightButton.frame.origin.x = self.leftButton.bounds.maxX + 65
+            self.rightButton.frame.size.width = self.leftButton.bounds.width
+            self.leftButton.alpha = 1
         } completion: { _ in
             UIView.animate(withDuration: 0.3) {
                 self.advertisementView.frame.size.height = 250
                 self.advertisementView.center.y = self.view.center.y + 50
-                self.rightButton.frame.origin.x = self.leftButton.bounds.maxX + 65
-                self.rightButton.frame.size.width = self.leftButton.bounds.width
-                self.leftButton.alpha = 1
                 self.advertisementMessage.text = "If you want to see more info, click on 'open'"
             } completion: { _ in
                 UIView.animate(withDuration: 0.1) {
