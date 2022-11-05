@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "russell-westbrook-h-town-white-jersey-8t5w9hldeh9ccxff-8t5w9hldeh9ccxff.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
